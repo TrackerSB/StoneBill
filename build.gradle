@@ -4,6 +4,7 @@ plugins {
     id 'java'
 
     id 'com.github.gmazzo.buildconfig' version "2.0.2"
+    id 'io.freefair.lombok' version '6.1.0-m3'
     id 'org.openjfx.javafxplugin' version '0.0.8' // NOTE 0.0.9 may not work with the current Gradle version
 }
 
@@ -21,6 +22,8 @@ sourceCompatibility = 16
 targetCompatibility = 16
 
 dependencies {
+    implementation 'bayern.steinbrecher:CheckedElements:0.13-rc.3-SNAPSHOT'
+    implementation 'bayern.steinbrecher:ScreenSwitcher:0.2.3-rc.1-SNAPSHOT'
 }
 
 buildConfig {
@@ -38,6 +41,8 @@ application {
 javafx {
     version = "$sourceCompatibility"
     modules = [
+            "javafx.controls",
+            "javafx.fxml",
             "javafx.graphics"
     ]
 }

@@ -1,0 +1,10 @@
+.titled-pane {
+    -fx-collapsible: false;
+    -fx-focus-traversable: false;
+}
+
+*:invalid, *:duplicate {
+    -fx-border-color: red;
+    -fx-highlight-fill: red;
+    -fx-focus-color: red;
+}

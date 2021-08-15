@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import bayern.steinbrecher.checkedElements.textfields.CheckedTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<SplitPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="bayern.steinbrecher.stonebill.screens.BillCreationScreenController"
+           stylesheets="@BillCreationScreen.css">
+    <StackPane fx:id="billConfigPane">
+        <TitledPane text="%customer">
+            <VBox>
+                <Label text="%firstname"/>
+                <CheckedTextField fx:id="customerFirstname"/>
+                <Label text="%lastname"/>
+                <CheckedTextField fx:id="customerLastname"/>
+                <Label text="%street"/>
+                <CheckedTextField fx:id="customerStreet"/>
+                <Label text="%houseNumber"/>
+                <CheckedTextField fx:id="customerHouseNumber"/>
+                <Label text="%postalCode"/>
+                <CheckedTextField fx:id="customerPostalCode"/>
+                <Label text="%city"/>
+                <CheckedTextField fx:id="customerCity"/>
+            </VBox>
+        </TitledPane>
+    </StackPane>
+    <StackPane fx:id="billPreviewPane">
+        <Label text="Not available yet"/>
+    </StackPane>
+</SplitPane>
