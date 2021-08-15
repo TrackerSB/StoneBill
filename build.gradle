@@ -1,0 +1,43 @@
+plugins {
+    id 'application'
+    id 'distribution'
+    id 'java'
+
+    id 'com.github.gmazzo.buildconfig' version "2.0.2"
+    id 'org.openjfx.javafxplugin' version '0.0.8' // NOTE 0.0.9 may not work with the current Gradle version
+}
+
+group 'bayern.steinbrecher'
+version '0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+}
+
+sourceCompatibility = 16
+targetCompatibility = 16
+
+dependencies {
+}
+
+buildConfig {
+    buildConfigField("String", "APP_NAME", "\"${project.name}\"")
+    buildConfigField("String", "APP_VERSION", "\"${project.version}\"")
+    buildConfigField("String", "APP_VERSION_NICKNAME", "\"The one and only\"")
+    buildConfigField("long", "BUILD_TIME", "${System.currentTimeMillis()}L")
+    packageName("bayern.steinbrecher.stonebill")
+}
+
+application {
+    mainClass = 'bayern.steinbrecher.stonebill.Main'
+}
+
+javafx {
+    version = "$sourceCompatibility"
+    modules = [
+            "javafx.graphics"
+    ]
+}
